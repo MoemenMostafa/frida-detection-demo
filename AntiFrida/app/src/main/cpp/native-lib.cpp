@@ -9,6 +9,7 @@
 #include <android/log.h>
 #include <unistd.h>
 #include <errno.h>
+#include <stdlib.h>
 
 #define APPNAME "FridaDetectionTest"
 #define MAX_LINE 512
@@ -23,6 +24,7 @@ int scan_executable_segments(char *);
 int read_one_line(int fd, char *buf, unsigned int max_len);
 
 void *detect_frida_loop(void *) {
+
 
     struct sockaddr_in sa;
     memset(&sa, 0, sizeof(sa));
@@ -59,7 +61,8 @@ void *detect_frida_loop(void *) {
 
                 if ((ret = recv(sock, res, 6, MSG_DONTWAIT)) != -1) {
                     if (strcmp(res, "REJECT") == 0) {
-                        __android_log_print(ANDROID_LOG_VERBOSE, APPNAME,  "FRIDA DETECTED [1] - frida server running on port %d!", i);
+//                        __android_log_print(ANDROID_LOG_VERBOSE, APPNAME,  "FRIDA DETECTED [1] - frida server running on port %d!", i);
+                        abort();
                     }
                 }
             }
@@ -84,12 +87,13 @@ void *detect_frida_loop(void *) {
             }
 
             if (num_found > 1) {
-                __android_log_print(ANDROID_LOG_VERBOSE, APPNAME,  "FRIDA DETECTED [2] - suspect string found in memory!");
+//                __android_log_print(ANDROID_LOG_VERBOSE, APPNAME,  "FRIDA DETECTED [2] - suspect string found in memory!");
+                abort();
             }
 
         } else {
-            __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Error opening /proc/self/maps. That's usually a bad sign.");
-
+//            __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Error opening /proc/self/maps. That's usually a bad sign.");
+            abort();
         }
 
         sleep(3);
