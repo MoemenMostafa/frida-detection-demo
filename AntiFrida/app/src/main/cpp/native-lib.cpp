@@ -41,6 +41,9 @@ void *detect_frida_loop(void *) {
     int i;
 
     while (1) {
+        
+        __android_log_print(ANDROID_LOG_VERBOSE, APPNAME,  "FRIDA TEST [1] - checking frida server running on ports");
+
 
         /*
          * 1: Frida Server Detection.
