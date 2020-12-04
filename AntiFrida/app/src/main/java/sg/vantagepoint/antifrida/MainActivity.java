@@ -1,27 +1,22 @@
 package sg.vantagepoint.antifrida;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.TextView;
+import android.content.Context;
 
-public class MainActivity extends AppCompatActivity {
+public class AntiFrida {
+
+    private final Context mContext;
+    private boolean loggingEnabled = true;
 
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+    public AntiFrida(Context context) {
+        mContext = context;
         init();
-
-        // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText("Frida Detection Initialized. Watch the logs...");
     }
+
 
     /**
      * A native method that is implemented by the 'native-lib' native library,
