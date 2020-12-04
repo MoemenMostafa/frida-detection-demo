@@ -1,0 +1,9 @@
+ninja: Entering directory `/Users/m.mostafa/Documents/code/frida-detection-demo/AntiFrida/app/.cxx/cmake/debug/x86'
+[1/2] Building ASM object CMakeFiles/native-lib.dir/src/main/cpp/syscall.S.o
+[2/2] Linking CXX shared library ../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so
+FAILED: ../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so 
+: && /Users/m.mostafa/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++ --target=i686-none-linux-android21 --gcc-toolchain=/Users/m.mostafa/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/m.mostafa/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -shared -Wl,-soname,libnative-lib.so -o ../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so CMakeFiles/native-lib.dir/src/main/cpp/syscall.S.o CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o  -llog -latomic -lm && :
+../../../../src/main/cpp/native-lib.cpp:80: error: undefined reference to 'my_openat'
+../../../../src/main/cpp/native-lib.cpp:166: error: undefined reference to 'my_read'
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.

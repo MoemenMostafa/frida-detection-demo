@@ -1,0 +1,3 @@
+# ninja log v5
+0	213	1606913211	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	1d0033f95273a068
+2	57	1606913462	CMakeFiles/native-lib.dir/src/main/cpp/syscall.S.o	76f1bbf82ea2e34c

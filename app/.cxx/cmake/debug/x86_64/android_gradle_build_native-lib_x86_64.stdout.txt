@@ -1,0 +1,65 @@
+ninja: Entering directory `/Users/m.mostafa/Documents/code/frida-detection-demo/AntiFrida/app/.cxx/cmake/debug/x86_64'
+[1/2] Building ASM object CMakeFiles/native-lib.dir/src/main/cpp/syscall.S.o
+FAILED: CMakeFiles/native-lib.dir/src/main/cpp/syscall.S.o 
+/Users/m.mostafa/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang -target x86_64-none-linux-android21 -gcc-toolchain /Users/m.mostafa/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/m.mostafa/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/native-lib.dir/src/main/cpp/syscall.S.o -MF CMakeFiles/native-lib.dir/src/main/cpp/syscall.S.o.d -o CMakeFiles/native-lib.dir/src/main/cpp/syscall.S.o -c ../../../../src/main/cpp/syscall.S
+../../../../src/main/cpp/syscall.S:8:5: error: unknown use of instruction mnemonic without a size suffix
+    mov ip, r7
+    ^
+../../../../src/main/cpp/syscall.S:9:21: error: invalid register name
+    .cfi_register r7, ip
+                    ^
+../../../../src/main/cpp/syscall.S:10:13: error: unknown token in expression
+    ldr r7, =257
+            ^
+../../../../src/main/cpp/syscall.S:11:5: error: invalid instruction mnemonic 'swi'
+    swi #0
+    ^~~
+../../../../src/main/cpp/syscall.S:12:5: error: unknown use of instruction mnemonic without a size suffix
+    mov r7, ip
+    ^
+../../../../src/main/cpp/syscall.S:13:20: error: invalid register name
+    .cfi_restore r7
+                   ^
+../../../../src/main/cpp/syscall.S:14:13: error: unknown token in expression
+    cmn r0, #(4095 + 1)
+            ^
+../../../../src/main/cpp/syscall.S:15:5: error: invalid instruction mnemonic 'bxls'
+    bxls lr
+    ^~~~
+../../../../src/main/cpp/syscall.S:16:5: error: unknown use of instruction mnemonic without a size suffix
+    neg r0, r0
+    ^
+../../../../src/main/cpp/syscall.S:17:5: error: invalid instruction mnemonic 'b'
+    b __set_errno_internal
+    ^
+../../../../src/main/cpp/syscall.S:26:5: error: unknown use of instruction mnemonic without a size suffix
+    mov ip, r7
+    ^
+../../../../src/main/cpp/syscall.S:27:21: error: invalid register name
+    .cfi_register r7, ip
+                    ^
+../../../../src/main/cpp/syscall.S:28:13: error: unknown token in expression
+    ldr r7, =0
+            ^
+../../../../src/main/cpp/syscall.S:29:5: error: invalid instruction mnemonic 'swi'
+    swi #0
+    ^~~
+../../../../src/main/cpp/syscall.S:30:5: error: unknown use of instruction mnemonic without a size suffix
+    mov r7, ip
+    ^
+../../../../src/main/cpp/syscall.S:31:20: error: invalid register name
+    .cfi_restore r7
+                   ^
+../../../../src/main/cpp/syscall.S:32:13: error: unknown token in expression
+    cmn r0, #(4095 + 1)
+            ^
+../../../../src/main/cpp/syscall.S:33:5: error: invalid instruction mnemonic 'bxls'
+    bxls lr
+    ^~~~
+../../../../src/main/cpp/syscall.S:34:5: error: unknown use of instruction mnemonic without a size suffix
+    neg r0, r0
+    ^
+../../../../src/main/cpp/syscall.S:35:5: error: invalid instruction mnemonic 'b'
+    b __set_errno_internal
+    ^
+ninja: build stopped: subcommand failed.
